@@ -1,36 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <data>
+        <record id="view_library_category_form" model="ir.ui.view">
+            <field name="name">library.category.form</field>
+            <field name="model">library.category</field>
+            <field name="arch" type="xml">
+                <form string="Library Category">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="description" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
 
-    <record id="view_library_category_form" model="ir.ui.view">
-        <field name="name">library.category.form</field>
-        <field name="model">library.category</field>
-        <field name="arch" type="xml">
-            <form string="Library Category">
-                <sheet>
-                    <group>
-                        <field name="name" />
-                        <field name="description" />
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
+        <record id="view_library_category_tree" model="ir.ui.view">
+            <field name="name">library.category.tree</field>
+            <field name="model">library.category</field>
+            <field name="arch" type="xml">
+                <tree string="Library Category">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
 
-    <record id="view_library_category_tree" model="ir.ui.view">
-        <field name="name">library.category.tree</field>
-        <field name="model">library.category</field>
-        <field name="arch" type="xml">
-            <tree string="Library Category">
-                <field name="name" />
-            </tree>
-        </field>
+        <record id="library_category_action" model="ir.actions.act_window">
+            <field name="name">Categories</field>
+            <field name="res_model">library.category</field>
+            <field name="view_mode">tree,form</field>
     </record>
+    <menuitem id="menu_library_categories" name="Categories" action="library_category_action" parent="menu_library_management" />
 
-    <record id="library_category_action" model="ir.actions.act_window">
-        <field name="name">Categories</field>
-        <field name="res_model">library.category</field>
-        <field name="view_mode">tree,form</field>         
-        </field>
-    </record>
-<menuitem id="menu_library_categories" name="Categories" action="library_category_action"  parent="menu_library_management" />
+
+
+</data>
+
 </odoo>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <data>
         <record id="model_name_view_form" model="ir.ui.view">
             <field name="name">library.book.form</field>
             <field name="model">library.book</field>
@@ -16,28 +17,30 @@
                 </form>
             </field>
         </record>
-  
-  <record id="view_library_book_tree" model="ir.ui.view">
-    <field name="name">library.book.tree</field>
-    <field name="model">library.book</field>
-    <field name="arch" type="xml">
-        <tree string="Library Book">
-            <field name="name" />
-            <field name="author_id" />
-            <field name="category_id" />
-            <field name="publication_date" />
-        </tree>
-    </field>
-  </record>
 
-<record id="library_book_action" model="ir.actions.act_window">
-    <field name="name">Books</field>
-    <field name="res_model">library.book</field>
-    <field name="view_mode">tree,form</field>        
-    </field>
-</record>
+        <record id="view_library_book_tree" model="ir.ui.view">
+            <field name="name">library.book.tree</field>
+            <field name="model">library.book</field>
+            <field name="arch" type="xml">
+                <tree string="Library Book">
+                    <field name="name" />
+                    <field name="author_id" />
+                    <field name="category_id" />
+                    <field name="publication_date" />
+                </tree>
+            </field>
+        </record>
 
-<menuitem id="menu_library_management" name="Library Management" />
+        <record id="library_book_action" model="ir.actions.act_window">
+            <field name="name">Books</field>
+            <field name="res_model">library.book</field>
+            <field name="view_mode">tree,form</field>
+    </record>
 
-<menuitem id="menu_library_book" name="Books" action="library_book_action" parent="menu_library_management"/>
+    <menuitem id="menu_library_management" name="Library Management" />
+
+    <menuitem id="menu_library_book" name="Books" action="library_book_action" parent="menu_library_management"/>
+
+</data>
+
 </odoo>

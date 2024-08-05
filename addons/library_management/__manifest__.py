@@ -24,13 +24,11 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/views.xml',
         'views/library_book.xml',
         'views/library_author.xml',
         'views/library_category.xml',
         'views/library_loan.xml',
         'views/library_menu.xml'
-        # 'views/templates.xml',
     ],
     'application':True,
     # only loaded in demonstration mode
